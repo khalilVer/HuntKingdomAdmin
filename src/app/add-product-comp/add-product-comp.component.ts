@@ -9,7 +9,7 @@ import {Router} from '@angular/router';
 })
 export class AddProductCompComponent implements OnInit {
 
-     productDetails = { reference: '', libelle: '', addDate: '', prix: 0, categorie: '', description: '', urlImage: '', type: '' }
+     productDetails = { reference: '', libelle: '', date: '', prix: 0, categorie: '', description: '', image: '', type: '' }
 
     constructor(private produitService: ProduitServiceService, public router: Router
     ) { }
