@@ -21,4 +21,12 @@ export class ListeProductCompComponent implements OnInit {
         });
     }
 
+    deleteProduit(id) {
+        if (window.confirm('Are you sure, you want to delete?')) {
+            this.produitService.deleteProduct(id).subscribe(data => {
+                this.loadProducts();
+            });
+        }
+    }
+
 }

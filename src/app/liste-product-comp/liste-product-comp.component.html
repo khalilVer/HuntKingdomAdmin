@@ -26,6 +26,8 @@
                                     <th>DATE D'AJOUT</th>
                                     <th>CATEGORIE</th>
                                     <th>DESCRIPTION</th>
+                                    <th>DELETE</th>
+                                    <th>UPDATE</th>
                                 </tr>
                                 </thead>
                                 <tbody >
@@ -37,6 +39,8 @@
                                     <td> {{p.dateAjout}}</td>
                                     <td>{{p.categorie}}</td>
                                     <td>{{p.description}}</td>
+                                    <td><button class="btn btn-danger waves-effect" (click)="deleteProduit(p.id)">DELETE</button></td>
+                                    <td><button class="btn btn-primary waves-effect" routerLink="/editProduct/{{p.id}}">UPDATE</button></td>
                                 </tr>
                                 </tbody>
                             </table>

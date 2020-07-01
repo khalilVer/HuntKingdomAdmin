@@ -11,11 +11,13 @@ import {HttpClientModule} from '@angular/common/http';
 import { ListeProductCompComponent } from './liste-product-comp/liste-product-comp.component';
 import {ProduitServiceService} from './service/produit-service.service';
 import { AddProductCompComponent } from './add-product-comp/add-product-comp.component';
+import { EditProductCompComponent } from './edit-product-comp/edit-product-comp.component';
 
 const ROUTES: Routes = [
     {path: 'dashbord', component: DashbordComponent},
     {path: 'allProduct', component: ListeProductCompComponent},
-    {path: 'addProduct', component: AddProductCompComponent}
+    {path: 'addProduct', component: AddProductCompComponent},
+    {path: 'editProduct/:id', component: EditProductCompComponent}
 
 ];
 
@@ -26,7 +28,8 @@ const ROUTES: Routes = [
     SidebarComponent,
     DashbordComponent,
     ListeProductCompComponent,
-    AddProductCompComponent
+    AddProductCompComponent,
+    EditProductCompComponent
   ],
   imports: [
       BrowserModule,
