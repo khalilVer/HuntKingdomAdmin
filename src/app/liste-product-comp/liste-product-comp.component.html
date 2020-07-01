@@ -26,6 +26,8 @@
                                     <th>DATE D'AJOUT</th>
                                     <th>CATEGORIE</th>
                                     <th>DESCRIPTION</th>
+                                    <th>TYPE</th>
+                                    <th>IMAGE</th>
                                     <th>DELETE</th>
                                     <th>UPDATE</th>
                                 </tr>
@@ -36,9 +38,11 @@
                                     <td>{{p.reference}}</td>
                                     <td>{{p.libelle}}</td>
                                     <td>{{p.prix}}</td>
-                                    <td> {{p.dateAjout}}</td>
+                                    <td>{{p.date}}</td>
                                     <td>{{p.categorie}}</td>
                                     <td>{{p.description}}</td>
+                                    <td>{{p.type}}</td>
+                                    <td>{{p.image}}</td>
                                     <td><button class="btn btn-danger waves-effect" (click)="deleteProduit(p.id)">DELETE</button></td>
                                     <td><button class="btn btn-primary waves-effect" routerLink="/editProduct/{{p.id}}">UPDATE</button></td>
                                 </tr>
