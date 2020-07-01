@@ -33,6 +33,29 @@ export class ProduitServiceService {
                 catchError(this.handleError)
             );
     }
+    deleteProduct(id) {
+        return this.http.delete<Produit>(this.apiURL + '/produits/' + id + '/delete', this.httpOptions)
+            .pipe(
+                retry(1),
+                catchError(this.handleError)
+            );
+    }
+
+    getProduct(id): Observable<Produit> {
+        return this.http.get<Produit>(this.apiURL + '/produits/' + id)
+            .pipe(
+                retry(1),
+                catchError(this.handleError)
+            );
+    }
+
+    updateProduct(id, produit): Observable<Produit> {
+        return this.http.put<Produit>(this.apiURL + '/produits/' + id + '/edit' , JSON.stringify(produit), this.httpOptions)
+            .pipe(
+                retry(1),
+                catchError(this.handleError)
+            );
+    }
     // Error handling
     handleError(error) {
         let errorMessage = '';
