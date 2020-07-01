@@ -5,6 +5,8 @@ export class Produit {
     description: string;
     categorie: string;
     prix: number;
-    dateAjout: string;
+    addDate: string;
+    urlImage: string;
+    type: string;
 
 }
