@@ -11,6 +11,13 @@ export class ProduitServiceService {
     // Define API
     apiURL = 'pi/hunterskingdom/web/app_dev.php/api';
 
+    // Http Options
+    httpOptions = {
+        headers: new HttpHeaders({
+            'Content-Type': 'application/json'
+        })
+    };
+
     constructor(private http: HttpClient) { }
     getProducts(): Observable<Produit> {
         return this.http.get<Produit>( this.apiURL + '/produits')
@@ -19,7 +26,13 @@ export class ProduitServiceService {
                 catchError(this.handleError)
             );
     }
-
+    createProduct(product): Observable<Produit> {
+        return this.http.post<Produit>(this.apiURL + '/produits/new', JSON.stringify(product), this.httpOptions)
+            .pipe(
+                retry(1),
+                catchError(this.handleError)
+            );
+    }
     // Error handling
     handleError(error) {
         let errorMessage = '';
