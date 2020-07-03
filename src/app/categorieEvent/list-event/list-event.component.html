@@ -1,0 +1,58 @@
+<section class="content">
+    <div class="container-fluid">
+        <!-- Basic Examples -->
+        <div class="row clearfix">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="card">
+                    <div class="header">
+                        <h2>
+                            All categorie
+                        </h2>
+                    </div>
+                    <div class="body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                                <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nom</th>
+                                    <th>type</th>
+                                    <th>adresse</th>
+                                    <th>latitude</th>
+                                    <th>langitude</th>
+                                    <th>dateDebut</th>
+                                    <th>dateFin</th>
+                                    <th>nbrParticipent</th>
+                                    <th>placeDispo</th>
+                                    <th>categorie</th>
+
+                                    
+                                </tr>
+                                </thead>
+                                <tbody >
+                                <tr *ngFor="let p of event">
+                                    <td>{{p.id}}</td>
+                                    <td>{{p.nom}}</td>
+                                    <td>{{p.type}}</td>
+                                    <td>{{p.adresse}}</td>
+                                    <td>{{p.latitude}}</td>
+                                    <td>{{p.langitude}}</td>
+                                    <td>{{p.dateDebut}}</td>
+                                    <td>{{p.dateFin}}</td>
+                                    <td>{{p.nbrParticipent}}</td>
+                                    <td>{{p.placeDispo}}</td>
+                                    <td>{{p.categorie}}</td>
+
+                                    <td><button class="btn btn-danger waves-effect" (click)="deleteEvent(p.id)">DELETE</button></td>
+                                    <td><button class="btn btn-primary waves-effect" routerLink="/editProduct/{{p.id}}">UPDATE</button></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- #END# Basic Examples -->
+    </div>
+</section>

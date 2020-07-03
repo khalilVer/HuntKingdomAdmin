@@ -1,3 +1,4 @@
+import { EventService } from './service/event.service';
 import { CategorieService } from './service/categorie.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -17,6 +18,7 @@ import { ListCategorieComponent } from './categorieEvent/list-categorie/list-cat
 import { AddCategorieComponent } from './categorieEvent/add-categorie/add-categorie.component';
 import { ScheduleModule, RecurrenceEditorModule,DayService,WeekService,WorkWeekService,MonthService,MonthAgendaService } from '@syncfusion/ej2-angular-schedule';
 import { AddEventComponent } from './categorieEvent/add-event/add-event.component';
+import { ListEventComponent } from './categorieEvent/list-event/list-event.component';
 
 const ROUTES: Routes = [
     {path: 'dashbord', component: DashbordComponent},
@@ -28,7 +30,7 @@ const ROUTES: Routes = [
     {path: 'allCategorie', component: ListCategorieComponent},
 
     {path: 'addEvent', component: AddEventComponent},
-    {path: 'allEvent', component: EditProductCompComponent},
+    {path: 'allEvent', component: ListEventComponent},
 
 ];
 
@@ -44,6 +46,7 @@ const ROUTES: Routes = [
     ListCategorieComponent,
     AddCategorieComponent,
     AddEventComponent,
+    ListEventComponent,
     
   ],
   imports: [
@@ -53,7 +56,7 @@ const ROUTES: Routes = [
       HttpClientModule,
       ScheduleModule, RecurrenceEditorModule
   ],
-  providers: [ProduitServiceService,CategorieService,DayService,WeekService,WorkWeekService,MonthService,MonthAgendaService],
+  providers: [ProduitServiceService,CategorieService,EventService,DayService,WeekService,WorkWeekService,MonthService,MonthAgendaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
