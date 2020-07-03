@@ -50,8 +50,8 @@ export class CommandeServiceService {
             );
     }
 
-    validateCommande(id): Observable<Commande> {
-        return this.http.put<Commande>(this.apiURL + '/commandes/' + id + '/validate' , JSON.stringify(null), this.httpOptions)
+    validateCommande(id, commande): Observable<Commande> {
+        return this.http.put<Commande>(this.apiURL + '/commandes/' + id + '/validate' , JSON.stringify(commande), this.httpOptions)
             .pipe(
                 retry(1),
                 catchError(this.handleError)

@@ -30,7 +30,7 @@ export class ListeCommandeCompComponent implements OnInit {
 
     validateCommande(id) {
         if (window.confirm('Are you sure, you want to validate?')) {
-            this.commandeService.validateCommande(id).subscribe(data => {
+            this.commandeService.validateCommande(id, this.commandes).subscribe(data => {
                 this.loadCommandes();
             });
         }
