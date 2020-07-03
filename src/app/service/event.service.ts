@@ -9,7 +9,7 @@ import {catchError, retry} from 'rxjs/operators';
 export class EventService {
 
    // Define API
-   apiURL = 'HuntersKingdom/web/app_dev.php/event';
+   apiURL = 'http://localhost/HuntersKingdom/web/app_dev.php/event';
 
    // Http Options
    httpOptions = {
@@ -20,8 +20,8 @@ export class EventService {
 
   constructor(private http: HttpClient) { }
 
-  getEvents(): Observable<Event> {
-    return this.http.get<Event>( this.apiURL + '/getall')
+  getEvents(): Observable<Event[]> {
+    return this.http.get<Event[]>( this.apiURL +'/getall')
         .pipe(
             retry(1),
             catchError(this.handleError)
