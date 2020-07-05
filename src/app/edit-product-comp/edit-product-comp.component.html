@@ -43,39 +43,61 @@
                                                 <i class="material-icons">date_range</i>
                                             </span>
                                         <div class="form-line">
-                                            <input type="text" [(ngModel)]="productData.dateAjout" class="form-control date" placeholder="Ex: 30/07/2020">
+                                            <input type="text" [(ngModel)]="productData.date" class="form-control date" placeholder="Ex: 30/07/2020">
                                         </div>
                                     </div>
                                 </div>
 
 
 
-                                <br>
-                                <div class="col-md-12">
+                                <div class="col-md-6">
                                     <b>Description</b>
                                     <div class="input-group">
                                         <div class="form-group form-float">
                                             <div class="form-line">
-                                                <textarea name="description" [(ngModel)]="productData.description" cols="30" rows="5" class="form-control no-resize" required ></textarea>
+                                                <textarea name="description" [(ngModel)]="productData.description" cols="30" rows="2" class="form-control no-resize" required ></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <b>URL Image</b>
+                                    <div class="input-group">
+                                        <div class="form-group form-float">
+                                            <div class="form-line">
+                                                <textarea name="description" [(ngModel)]="productData.image" cols="30" rows="2" class="form-control no-resize" required ></textarea>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="col-md-4">
+                                <div class="col-md-3">
                                     <b>Categorie</b>
                                     <div class="input-group">
 
                                         <div class="form-line">
                                             <select [(ngModel)]="productData.categorie" class="form-control show-tick">
+                                                <option></option>
                                                 <option>Hunting</option>
                                                 <option>Fishing</option>
                                             </select>
                                         </div>
                                     </div>
                                 </div>
+                                <div class="col-md-3">
+                                    <b>Types</b>
+                                    <div class="input-group">
 
-                                <div class="col-md-4">
+                                        <div class="form-line">
+                                            <select [(ngModel)]="productData.type" class="form-control show-tick">
+                                                <option></option>
+                                                <option>SELL</option>
+                                                <option>LOAN</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
                                     <b>Prix (Dinars)</b>
                                     <div class="input-group">
                                             <span class="input-group-addon">
@@ -83,6 +105,17 @@
                                             </span>
                                         <div class="form-line">
                                             <input type="text" [(ngModel)]="productData.prix" class="form-control money-dollar" placeholder="Ex: 99,99 TND">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <b>Quantite (Piece)</b>
+                                    <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="material-icons">add_box</i>
+                                            </span>
+                                        <div class="form-line">
+                                            <input type="text" [(ngModel)]="productData.quantite" class="form-control money-dollar" placeholder="Ex: 25">
                                         </div>
                                     </div>
                                 </div>
