@@ -14,31 +14,23 @@ import { ListeProductCompComponent } from './liste-product-comp/liste-product-co
 import {ProduitServiceService} from './service/produit-service.service';
 import { AddProductCompComponent } from './add-product-comp/add-product-comp.component';
 import { EditProductCompComponent } from './edit-product-comp/edit-product-comp.component';
-<<<<<<< HEAD
 import { ListCategorieComponent } from './categorieEvent/list-categorie/list-categorie.component';
 import { AddCategorieComponent } from './categorieEvent/add-categorie/add-categorie.component';
 import { ScheduleModule, RecurrenceEditorModule,DayService,WeekService,WorkWeekService,MonthService,MonthAgendaService } from '@syncfusion/ej2-angular-schedule';
 import { AddEventComponent } from './categorieEvent/add-event/add-event.component';
 import { ListEventComponent } from './categorieEvent/list-event/list-event.component';
-=======
-import { ListeCommandeCompComponent } from './liste-commande-comp/liste-commande-comp.component';
->>>>>>> ac8101cd7ddf4c029ff6b1e4af247bd7676b95f6
 
 const ROUTES: Routes = [
     {path: 'dashbord', component: DashbordComponent},
     {path: 'allProduct', component: ListeProductCompComponent},
     {path: 'addProduct', component: AddProductCompComponent},
     {path: 'editProduct/:id', component: EditProductCompComponent},
-<<<<<<< HEAD
     
     {path: 'addCategorie', component: AddCategorieComponent},
     {path: 'allCategorie', component: ListCategorieComponent},
 
     {path: 'addEvent', component: AddEventComponent},
     {path: 'allEvent', component: ListEventComponent},
-=======
-    {path: 'allCommande', component: ListeCommandeCompComponent}
->>>>>>> ac8101cd7ddf4c029ff6b1e4af247bd7676b95f6
 
 ];
 
@@ -51,15 +43,11 @@ const ROUTES: Routes = [
     ListeProductCompComponent,
     AddProductCompComponent,
     EditProductCompComponent,
-<<<<<<< HEAD
     ListCategorieComponent,
     AddCategorieComponent,
     AddEventComponent,
     ListEventComponent,
     
-=======
-    ListeCommandeCompComponent
->>>>>>> ac8101cd7ddf4c029ff6b1e4af247bd7676b95f6
   ],
   imports: [
       BrowserModule,

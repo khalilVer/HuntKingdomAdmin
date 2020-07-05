@@ -9,15 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListCategorieComponent implements OnInit {
 
-  Categorie : any = [];
-    constructor(private categorieService: CategorieService) { }
+  categories : any = [];
+   constructor(private categorieService: CategorieService) { }
   ngOnInit() {
       this.loadProducts();
   }
     // Get products list
     loadProducts() {
         return this.categorieService.getCategories().subscribe((data: {}) => {
-            this.Categorie = data;
+            this.categories = data;
         });
     }
 
