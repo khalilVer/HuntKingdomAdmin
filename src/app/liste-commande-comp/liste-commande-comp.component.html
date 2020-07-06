@@ -1,0 +1,52 @@
+
+
+
+
+
+<section class="content">
+    <div class="container-fluid">
+        <!-- Basic Examples -->
+        <div class="row clearfix">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="card">
+                    <div class="header">
+                        <h2>
+                            All Commandes
+                        </h2>
+                    </div>
+                    <div class="body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                                <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>NUMERO COMMANDE</th>
+                                    <th>QUANTITE TOTAL</th>
+                                    <th>PRIX TOTAL</th>
+                                    <th>DATE ACHAT</th>
+                                    <th>VALIDE</th>
+                                    <th>PRODUCTS NUMBER</th>
+                                </tr>
+                                </thead>
+                                <tbody >
+                                <tr *ngFor="let p of commandes">
+                                    <td>{{p.id}}</td>
+                                    <td>{{p.numero_commande}}</td>
+                                    <td>{{p.quantite_total}}</td>
+                                    <td>{{p.prix_total}}</td>
+                                    <td>{{p.date_achat}}</td>
+                                    <td>{{p.is_valid}}</td>
+                                    <td>{{p.products.length}}</td>
+                                    <td><button class="btn btn-danger waves-effect" (click)="deleteCommande(p.id)">DELETE</button></td>
+                                    <td><button class="btn btn-primary waves-effect" (click)="validateCommande(p.id)">VALIDATE</button></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- #END# Basic Examples -->
+    </div>
+</section>

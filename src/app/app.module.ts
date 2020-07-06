@@ -12,12 +12,14 @@ import { ListeProductCompComponent } from './liste-product-comp/liste-product-co
 import {ProduitServiceService} from './service/produit-service.service';
 import { AddProductCompComponent } from './add-product-comp/add-product-comp.component';
 import { EditProductCompComponent } from './edit-product-comp/edit-product-comp.component';
+import { ListeCommandeCompComponent } from './liste-commande-comp/liste-commande-comp.component';
 
 const ROUTES: Routes = [
     {path: 'dashbord', component: DashbordComponent},
     {path: 'allProduct', component: ListeProductCompComponent},
     {path: 'addProduct', component: AddProductCompComponent},
-    {path: 'editProduct/:id', component: EditProductCompComponent}
+    {path: 'editProduct/:id', component: EditProductCompComponent},
+    {path: 'allCommande', component: ListeCommandeCompComponent}
 
 ];
 
@@ -29,7 +31,8 @@ const ROUTES: Routes = [
     DashbordComponent,
     ListeProductCompComponent,
     AddProductCompComponent,
-    EditProductCompComponent
+    EditProductCompComponent,
+    ListeCommandeCompComponent
   ],
   imports: [
       BrowserModule,
