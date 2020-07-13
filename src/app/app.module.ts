@@ -25,7 +25,7 @@ const ROUTES: Routes = [
     {path: 'allCommande', component: ListeCommandeCompComponent},
     {path: 'allThreads', component: ListeThreadCompComponent},
     {path: 'validateThreads', component: ValidateThreadCompComponent},
-    {path: 'validateThreads', component: OverwatchSectionCompComponent}
+    {path: 'overwatchsection', component: OverwatchSectionCompComponent}
 ];
 
 @NgModule({
