@@ -6,7 +6,7 @@
                 <div class="card">
                     <div class="header">
                         <h2>
-                            Threads list
+                            Validation Board
                         </h2>
                     </div>
                     <div class="body">
@@ -19,8 +19,9 @@
                                     <th>Description</th>
                                     <th>Upvotes</th>
                                     <th>Downvotes</th>
-                                    <th>Creation date</th>
-                                    <th></th>
+                                    <th>More details</th>
+                                    <th>Validate</th>
+                                    <th>Reject</th>
                                 </tr>
                                 </thead>
                                 <tbody >
@@ -30,8 +31,9 @@
                                     <td>{{p.description}}</td>
                                     <td>{{p.upvote}}</td>
                                     <td>{{p.downvote}}</td>
-                                    <td>{{p.creationdate}}</td>
-                                    <td><button class="btn btn-danger waves-effect" (click)="deleteProduit(p.id)">Delete</button></td>
+                                    <td><button class="btn btn-danger waves-effect" (click)="deleteProduit(p.id)">Details</button></td>
+                                    <td><button class="btn btn-danger waves-effect" (click)="deleteProduit(p.id)">Validate</button></td>
+                                    <td><button class="btn btn-danger waves-effect" (click)="deleteProduit(p.id)">Reject</button></td>
                                 </tr>
                                 </tbody>
                             </table>

@@ -33,9 +33,25 @@ export class ThreadServiceService {
         );
 }
 
+getThreadsToValidate(): Observable<Thread> {
+    return this.http.get<Thread>( this.apiURL + '/threadstovalidate')
+        .pipe(
+            retry(1),
+            catchError(this.handleError)
+        );
+}
+
 
 deleteThread(id) {
     return this.http.delete<Thread>(this.apiURL + '/threads/' + id + '/delete', this.httpOptions)
+        .pipe(
+            retry(1),
+            catchError(this.handleError)
+        );
+}
+
+validateThread(id) {
+    return this.http.delete<Thread>(this.apiURL + '/threads/' + id + '/validate', this.httpOptions)
         .pipe(
             retry(1),
             catchError(this.handleError)
