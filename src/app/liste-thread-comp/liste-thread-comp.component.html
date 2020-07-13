@@ -17,8 +17,7 @@
                                     <th>Topic</th>
                                     <th>Title</th>
                                     <th>Description</th>
-                                    <th>Upvotes</th>
-                                    <th>Downvotes</th>
+                                    <th>Likes Ratio</th>
                                     <th>Creation date</th>
                                     <th></th>
                                 </tr>
@@ -28,8 +27,7 @@
                                     <td>{{p.topic}}</td>
                                     <td>{{p.title}}</td>
                                     <td>{{p.description}}</td>
-                                    <td>{{p.upvote}}</td>
-                                    <td>{{p.downvote}}</td>
+                                    <td>{{ getRatio(p) }} %</td>
                                     <td>{{p.creationdate}}</td>
                                     <td><button class="btn btn-danger waves-effect" (click)="deleteThread(p.id)">Delete</button></td>
                                 </tr>

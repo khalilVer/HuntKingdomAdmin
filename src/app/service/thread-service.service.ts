@@ -1,11 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
-//import { Observable } from 'rxjs';
 import { Thread } from '../Model/thread';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
-//import { catchError, retry } from 'rxjs/operators';
-
 
 
 @Injectable({
@@ -26,7 +23,7 @@ export class ThreadServiceService {
   constructor(private http: HttpClient) { }
 
   getThreads(): Observable<Thread> {
-    return this.http.get<Thread>( this.apiURL + '/threads')
+    return this.http.get<Thread>( this.apiURL + '/threadsvalid')
         .pipe(
             retry(1),
             catchError(this.handleError)

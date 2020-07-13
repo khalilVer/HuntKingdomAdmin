@@ -13,6 +13,7 @@ export class ValidateThreadCompComponent implements OnInit {
   constructor(private threadService: ThreadServiceService) { }
 
   ngOnInit() {
+    this.loadThreadsToValidate();
   }
 
   // Get threads to validate

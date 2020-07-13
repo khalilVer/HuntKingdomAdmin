@@ -17,11 +17,9 @@
                                     <th>Topic</th>
                                     <th>Title</th>
                                     <th>Description</th>
-                                    <th>Upvotes</th>
-                                    <th>Downvotes</th>
-                                    <th>More details</th>
-                                    <th>Validate</th>
-                                    <th>Reject</th>
+                                    <th>Details</th>
+                                    <th></th>
+                                    <th></th>
                                 </tr>
                                 </thead>
                                 <tbody >
@@ -29,10 +27,13 @@
                                     <td>{{p.topic}}</td>
                                     <td>{{p.title}}</td>
                                     <td>{{p.description}}</td>
-                                    <td>{{p.upvote}}</td>
-                                    <td>{{p.downvote}}</td>
-                                    <td><button class="btn btn-danger waves-effect" (click)="deleteProduit(p.id)">Details</button></td>
-                                    <td><button class="btn btn-danger waves-effect" (click)="deleteProduit(p.id)">Validate</button></td>
+                                    <td>
+                                        
+                                        <button class="btn bg-blue waves-effect" (click)="deleteProduit(p.id)">
+                                        <i class="material-icons">search</i>
+                                        </button>
+                                    </td>
+                                    <td><button class="btn bg-teal waves-effect" (click)="deleteProduit(p.id)">Validate</button></td>
                                     <td><button class="btn btn-danger waves-effect" (click)="deleteProduit(p.id)">Reject</button></td>
                                 </tr>
                                 </tbody>
