@@ -8,6 +8,5 @@ export class Produit {
     date: string;
     image: string;
     type: string;
-    quantite: number;
 
 }
