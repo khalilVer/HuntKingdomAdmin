@@ -13,6 +13,7 @@ export class ListeThreadCompComponent implements OnInit {
   constructor(private threadService: ThreadServiceService) { }
 
   ngOnInit() {
+    this.loadThreads();
   }
 
   // Get threads list
