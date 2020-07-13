@@ -12,15 +12,14 @@ export class AddCategorieComponent implements OnInit {
 
   categorietDetails = { nom: '', description: '' }
 
-  constructor(private produitService: CategorieService, public router: Router
-  ) { }
+  constructor(private produitService: CategorieService, public router: Router) { }
 
 ngOnInit() {
 }
 
-  addProduit() {
+  addCategori() {
       this.produitService.createCategorie(this.categorietDetails).subscribe((data: {}) => {
-          this.router.navigate(['/allCategorie']);
+          this.router.navigate(['/allEvent']);
       });
   }
 

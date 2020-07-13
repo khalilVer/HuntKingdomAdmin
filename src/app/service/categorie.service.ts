@@ -20,8 +20,8 @@ export class CategorieService {
 
   constructor(private http: HttpClient) { }
 
-  getCategories(): Observable<Categorie> {
-    return this.http.get<Categorie>( this.apiURL + '/getall')
+  getCategories(): Observable<Categorie[]> {
+    return this.http.get<Categorie[]>( this.apiURL + '/getall')
         .pipe(
             retry(1),
             catchError(this.handleError)
