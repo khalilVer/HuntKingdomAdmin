@@ -13,14 +13,19 @@ import {ProduitServiceService} from './service/produit-service.service';
 import { AddProductCompComponent } from './add-product-comp/add-product-comp.component';
 import { EditProductCompComponent } from './edit-product-comp/edit-product-comp.component';
 import { ListeCommandeCompComponent } from './liste-commande-comp/liste-commande-comp.component';
+import { ListeThreadCompComponent } from './liste-thread-comp/liste-thread-comp.component';
+import { ValidateThreadCompComponent } from './validate-thread-comp/validate-thread-comp.component';
+import { OverwatchSectionCompComponent } from './overwatch-section-comp/overwatch-section-comp.component';
 
 const ROUTES: Routes = [
     {path: 'dashbord', component: DashbordComponent},
     {path: 'allProduct', component: ListeProductCompComponent},
     {path: 'addProduct', component: AddProductCompComponent},
     {path: 'editProduct/:id', component: EditProductCompComponent},
-    {path: 'allCommande', component: ListeCommandeCompComponent}
-
+    {path: 'allCommande', component: ListeCommandeCompComponent},
+    {path: 'allThreads', component: ListeThreadCompComponent},
+    {path: 'validateThreads', component: ValidateThreadCompComponent},
+    {path: 'overwatchsection', component: OverwatchSectionCompComponent}
 ];
 
 @NgModule({
@@ -32,7 +37,10 @@ const ROUTES: Routes = [
     ListeProductCompComponent,
     AddProductCompComponent,
     EditProductCompComponent,
-    ListeCommandeCompComponent
+    ListeCommandeCompComponent,
+    ListeThreadCompComponent,
+    ValidateThreadCompComponent,
+    OverwatchSectionCompComponent
   ],
   imports: [
       BrowserModule,
