@@ -1,0 +1,50 @@
+
+
+
+
+
+<section class="content">
+    <div class="container-fluid">
+        <!-- Basic Examples -->
+        <div class="row clearfix">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="card">
+                    <div class="header">
+                        <h2>
+                            Threads list
+                        </h2>
+                    </div>
+                    <div class="body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                                <thead>
+                                <tr>
+                                    <th>Topic</th>
+                                    <th>Title</th>
+                                    <th>Description</th>
+                                    <th>Upvotes</th>
+                                    <th>Downvotes</th>
+                                    <th>Creation date</th>
+                                    <th></th>
+                                </tr>
+                                </thead>
+                                <tbody >
+                                <tr *ngFor="let p of Threads">
+                                    <td>{{p.id}}</td>
+                                    <td>{{p.topic}}</td>
+                                    <td>{{p.description}}</td>
+                                    <td>{{p.upvote}}</td>
+                                    <td>{{p.downvote}}</td>
+                                    <td>{{p.creationdate}}</td>
+                                    <td><button class="btn btn-danger waves-effect" (click)="deleteProduit(p.id)">DELETE</button></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- #END# Basic Examples -->
+    </div>
+</section>

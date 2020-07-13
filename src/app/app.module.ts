@@ -13,6 +13,7 @@ import {ProduitServiceService} from './service/produit-service.service';
 import { AddProductCompComponent } from './add-product-comp/add-product-comp.component';
 import { EditProductCompComponent } from './edit-product-comp/edit-product-comp.component';
 import { ListeCommandeCompComponent } from './liste-commande-comp/liste-commande-comp.component';
+import { ListeThreadCompComponent } from './liste-thread-comp/liste-thread-comp.component';
 
 const ROUTES: Routes = [
     {path: 'dashbord', component: DashbordComponent},
@@ -32,7 +33,8 @@ const ROUTES: Routes = [
     ListeProductCompComponent,
     AddProductCompComponent,
     EditProductCompComponent,
-    ListeCommandeCompComponent
+    ListeCommandeCompComponent,
+    ListeThreadCompComponent
   ],
   imports: [
       BrowserModule,
