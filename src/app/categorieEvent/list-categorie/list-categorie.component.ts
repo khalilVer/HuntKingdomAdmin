@@ -12,19 +12,19 @@ export class ListCategorieComponent implements OnInit {
   categories : any = [];
    constructor(private categorieService: CategorieService) { }
   ngOnInit() {
-      this.loadProducts();
+      this.loadCategorie ();
   }
     // Get products list
-    loadProducts() {
+    loadCategorie() {
         return this.categorieService.getCategories().subscribe((data: {}) => {
             this.categories = data;
         });
     }
 
-    deleteProduit(id) {
+    deleteCategor(id) {
        if (window.confirm('Are you sure, you want to delete?')) {
             this.categorieService.deleteCategorie(id).subscribe(data => {
-                this.loadProducts();
+                this.loadCategorie();
             });
         }
     }
