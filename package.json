@@ -24,6 +24,7 @@
     "@syncfusion/ej2-angular-schedule": "^18.1.56",
     "@syncfusion/ej2-material-theme": "~18.1.55",
     "bootstrap": "^4.5.0",
+    "moment": "^2.27.0",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"

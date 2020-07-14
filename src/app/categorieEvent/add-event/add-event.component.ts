@@ -1,10 +1,8 @@
 import { CategorieService } from './../../service/categorie.service';
 import { Router } from '@angular/router';
 import { EventService } from './../../service/event.service';
-import { DropDownList } from '@syncfusion/ej2-dropdowns';
-import { DateTimePicker } from '@syncfusion/ej2-calendars';
+
 import { Component, OnInit } from '@angular/core';
-import { EventSettingsModel, DayService, WeekService, WorkWeekService, MonthService, PopupOpenEventArgs } from '@syncfusion/ej2-angular-schedule';
  
 @Component({
   selector: 'app-add-event',
@@ -13,7 +11,7 @@ import { EventSettingsModel, DayService, WeekService, WorkWeekService, MonthServ
 })
 export class AddEventComponent implements OnInit {
 
-  eventDetails = { nom: '', adresse: '',dateDebut:'',dateFin:'',nbrParticipent:''}
+  eventDetails = { nom: '', adresse: '',date_debut:'',date_fin:'',nbr_participent:''}
 
   categoriesList = [];
 
@@ -30,7 +28,8 @@ export class AddEventComponent implements OnInit {
   
   addCategory() {
     this.eventService.createEvent(this.eventDetails).subscribe((data: {}) => {
-        this.router.navigate(['/allCategorie']);
+
+        this.router.navigate(['/allEvent']);
     });
 }
 
