@@ -1,3 +1,5 @@
+import { EventService } from './service/event.service';
+import { CategorieService } from './service/categorie.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -16,6 +18,13 @@ import { ListeCommandeCompComponent } from './liste-commande-comp/liste-commande
 import { ListeThreadCompComponent } from './liste-thread-comp/liste-thread-comp.component';
 import { ValidateThreadCompComponent } from './validate-thread-comp/validate-thread-comp.component';
 import { OverwatchSectionCompComponent } from './overwatch-section-comp/overwatch-section-comp.component';
+import { ListCategorieComponent } from './categorieEvent/list-categorie/list-categorie.component';
+import { AddCategorieComponent } from './categorieEvent/add-categorie/add-categorie.component';
+import { ScheduleModule, RecurrenceEditorModule, DayService, WeekService, WorkWeekService, MonthService, MonthAgendaService } from '@syncfusion/ej2-angular-schedule';
+import { DateTimePicker } from '@syncfusion/ej2-calendars';
+import { DropDownList } from '@syncfusion/ej2-dropdowns';
+import { AddEventComponent } from './categorieEvent/add-event/add-event.component';
+import { ListEventComponent } from './categorieEvent/list-event/list-event.component';
 
 const ROUTES: Routes = [
     {path: 'dashbord', component: DashbordComponent},
@@ -25,7 +34,12 @@ const ROUTES: Routes = [
     {path: 'allCommande', component: ListeCommandeCompComponent},
     {path: 'allThreads', component: ListeThreadCompComponent},
     {path: 'validateThreads', component: ValidateThreadCompComponent},
-    {path: 'overwatchsection', component: OverwatchSectionCompComponent}
+    {path: 'overwatchsection', component: OverwatchSectionCompComponent},
+    {path: 'addCategorie', component: AddCategorieComponent},
+    {path: 'allCategorie', component: ListCategorieComponent},
+    {path: 'addEvent', component: AddEventComponent},
+    {path: 'allEvent', component: ListEventComponent}
+
 ];
 
 @NgModule({
@@ -40,15 +54,20 @@ const ROUTES: Routes = [
     ListeCommandeCompComponent,
     ListeThreadCompComponent,
     ValidateThreadCompComponent,
-    OverwatchSectionCompComponent
+    OverwatchSectionCompComponent,
+    ListCategorieComponent,
+    AddCategorieComponent,
+    AddEventComponent,
+    ListEventComponent
   ],
   imports: [
       BrowserModule,
       FormsModule,
       RouterModule.forRoot(ROUTES),
-      HttpClientModule
+      HttpClientModule,
+      ScheduleModule, RecurrenceEditorModule
   ],
-  providers: [ProduitServiceService],
+  providers: [ProduitServiceService, CategorieService, EventService, DayService, WeekService, WorkWeekService, MonthService, MonthAgendaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

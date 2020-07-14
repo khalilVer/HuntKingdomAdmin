@@ -14,7 +14,7 @@ export class ListeProductCompComponent implements OnInit {
   ngOnInit() {
       this.loadProducts();
   }
-    // Get products list
+    // Get products lists
     loadProducts() {
         return this.produitService.getProducts().subscribe((data: {}) => {
             this.Produits = data;
