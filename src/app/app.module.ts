@@ -14,6 +14,10 @@ import { ListeProductCompComponent } from './liste-product-comp/liste-product-co
 import {ProduitServiceService} from './service/produit-service.service';
 import { AddProductCompComponent } from './add-product-comp/add-product-comp.component';
 import { EditProductCompComponent } from './edit-product-comp/edit-product-comp.component';
+import { ListeCommandeCompComponent } from './liste-commande-comp/liste-commande-comp.component';
+import { ListeThreadCompComponent } from './liste-thread-comp/liste-thread-comp.component';
+import { ValidateThreadCompComponent } from './validate-thread-comp/validate-thread-comp.component';
+import { OverwatchSectionCompComponent } from './overwatch-section-comp/overwatch-section-comp.component';
 import { ListCategorieComponent } from './categorieEvent/list-categorie/list-categorie.component';
 import { AddCategorieComponent } from './categorieEvent/add-categorie/add-categorie.component';
 import { ScheduleModule, RecurrenceEditorModule,DayService,WeekService,WorkWeekService,MonthService,MonthAgendaService } from '@syncfusion/ej2-angular-schedule';
@@ -27,12 +31,14 @@ const ROUTES: Routes = [
     {path: 'allProduct', component: ListeProductCompComponent},
     {path: 'addProduct', component: AddProductCompComponent},
     {path: 'editProduct/:id', component: EditProductCompComponent},
-    
+    {path: 'allCommande', component: ListeCommandeCompComponent},
+    {path: 'allThreads', component: ListeThreadCompComponent},
+    {path: 'validateThreads', component: ValidateThreadCompComponent},
+    {path: 'overwatchsection', component: OverwatchSectionCompComponent},
     {path: 'addCategorie', component: AddCategorieComponent},
     {path: 'allCategorie', component: ListCategorieComponent},
-
     {path: 'addEvent', component: AddEventComponent},
-    {path: 'allEvent', component: ListEventComponent},
+    {path: 'allEvent', component: ListEventComponent}
 
 ];
 
@@ -45,10 +51,14 @@ const ROUTES: Routes = [
     ListeProductCompComponent,
     AddProductCompComponent,
     EditProductCompComponent,
+    ListeCommandeCompComponent,
+    ListeThreadCompComponent,
+    ValidateThreadCompComponent,
+    OverwatchSectionCompComponent,
     ListCategorieComponent,
     AddCategorieComponent,
     AddEventComponent,
-    ListEventComponent,
+    ListEventComponent
   
     
   ],
