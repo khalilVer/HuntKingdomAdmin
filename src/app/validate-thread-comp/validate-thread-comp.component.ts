@@ -25,7 +25,7 @@ export class ValidateThreadCompComponent implements OnInit {
 
 deleteThread(id) {
     if (window.confirm('Are you sure, you want to reject this thread?')) {
-        this.threadService.validateThread(id).subscribe(data => {
+        this.threadService.deleteThread(id).subscribe(data => {
             this.loadThreadsToValidate();
         });
     }
@@ -33,10 +33,11 @@ deleteThread(id) {
 
 validateThread(id) {
   if (window.confirm('Are you sure, you want to validate this thread?')) {
-    this.threadService.deleteThread(id).subscribe(data => {
+    this.threadService.validateThread(id).subscribe(data => {
         this.loadThreadsToValidate();
     });
 }
 }
+
 
 }

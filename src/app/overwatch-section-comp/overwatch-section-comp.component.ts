@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ThreadServiceService } from '../service/thread-service.service';
 
 @Component({
   selector: 'app-overwatch-section-comp',
@@ -7,9 +8,36 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OverwatchSectionCompComponent implements OnInit {
 
-  constructor() { }
+  Subjects: any = [];
+
+  constructor(private threadService: ThreadServiceService) { }
 
   ngOnInit() {
+    this.loadSubjects();
+  }
+
+  // Get threads list
+  loadSubjects() {
+    return this.threadService.getSubjects().subscribe((data: {}) => {
+        this.Subjects = data;
+    });
+  }
+
+  ignoreSubject(id) {
+    if (window.confirm('Are you sure, you want to ignore this Report ?')) {
+        this.threadService.ignoreSubject(id).subscribe(data => {
+            this.loadSubjects();
+        });
+    }
+  }
+
+  deleteSubject(id) {
+    if (window.confirm("Are you sure you want to delete this Subject ?")) {
+        this.threadService.deleteSubject(id).subscribe(data => {
+            this.loadSubjects();
+        });
+    }
+  
   }
 
 }

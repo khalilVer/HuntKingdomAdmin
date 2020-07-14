@@ -1,9 +1,8 @@
 export class Overwatch {
     id: number;
     type: string;
+    reason: string;
     subjectId: string;
-    upvote: string;
     reportNb: string;
-
 
 }
