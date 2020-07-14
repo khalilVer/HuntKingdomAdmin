@@ -18,6 +18,7 @@ ngOnInit() {
       return this.eventService.getEvents().subscribe((data: Event[]) => {
        
           this.events = data;
+          console.log('*********************');
           console.log(this.events);
       });
   }

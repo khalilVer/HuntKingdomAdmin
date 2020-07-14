@@ -94,7 +94,7 @@
                                     <div class="form-line">
                                         <select [(ngModel)]="eventDetails.categorie" class="form-control">
                                             <option></option>
-                                            <option *ngFor="let category of categoriesList" value="{{ category.id }}">
+                                            <option *ngFor="let category of categoriesList" [ngValue]="category">
                                                 {{category.nom }}
                                             </option>
                                         </select>
@@ -116,7 +116,7 @@
     
                         </div>
                     </div>
-                    <button class="btn btn-success waves-effect" (click)="addCategory()">SUCCESS</button>
+                    <button class="btn btn-success waves-effect" (click)="addEvent()">SUCCESS</button>
                 </div>
             </div>
         </div>

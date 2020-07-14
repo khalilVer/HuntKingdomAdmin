@@ -6,7 +6,7 @@
                 <div class="card">
                     <div class="header">
                         <h2>
-                            All categorie
+                            All Events
                         </h2>
                     </div>
                     <div class="body">
@@ -41,7 +41,7 @@
                                     <td>{{p.date_fin}}</td>
                                     <td>{{p.nbr_participent}}</td>
                                     <td>{{p.place_dispo}}</td>
-                                    <td>{{p.categorie}}</td>
+                                    <td>{{p.categorie?.nom}}</td>
 
                                     <td><button class="btn btn-danger waves-effect" (click)="deleteEvent(p.id)">DELETE</button></td>
                                     <td><button class="btn btn-primary waves-effect" routerLink="/editProduct/{{p.id}}">UPDATE</button></td>

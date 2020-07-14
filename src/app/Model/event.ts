@@ -1,3 +1,4 @@
+import { Categorie } from './categorie';
 export class Event {
     id: number;
     nom: string;
@@ -9,6 +10,6 @@ export class Event {
     dateFin : Date;
     nbrParticipent: number;
     placeDispo: number;
-    categorie: string;
+    categorie: Categorie;
 
 }
