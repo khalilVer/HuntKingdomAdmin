@@ -26,6 +26,7 @@
                                     <th>DATE ACHAT</th>
                                     <th>VALIDE</th>
                                     <th>PRODUCTS NUMBER</th>
+                                    <th>USER</th>
                                 </tr>
                                 </thead>
                                 <tbody >
@@ -37,8 +38,9 @@
                                     <td>{{p.date_achat}}</td>
                                     <td>{{p.is_valid}}</td>
                                     <td>{{p.products.length}}</td>
+                                    <td>{{p.user}}</td>
                                     <td><button class="btn btn-danger waves-effect" (click)="deleteCommande(p.id)">DELETE</button></td>
-                                    <td><button class="btn btn-primary waves-effect" (click)="validateCommande(p.id)">VALIDATE</button></td>
+                                    <td><button class="btn btn-primary waves-effect" [disabled]="p.is_valid" (click)="validateCommande(p.id)">VALIDATE</button></td>
                                 </tr>
                                 </tbody>
                             </table>
