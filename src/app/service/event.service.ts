@@ -51,8 +51,8 @@ getEvent(id): Observable<Event> {
         );
 }
 
-updateEvent(id, event): Observable<Categorie> {
-    return this.http.put<Categorie>(this.apiURL + '/update/' + id  , JSON.stringify(event), this.httpOptions)
+updateEvent(id, event): Observable<Event> {
+    return this.http.put<Event>(this.apiURL + '/update/' + id  , JSON.stringify(event), this.httpOptions)
         .pipe(
             retry(1),
             catchError(this.handleError)

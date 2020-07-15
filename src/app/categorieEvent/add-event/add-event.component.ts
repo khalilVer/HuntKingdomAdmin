@@ -27,7 +27,7 @@ export class AddEventComponent implements OnInit {
   
  
   
-  addaddEvent() {
+  addEvent() {
     this.eventDetails.date_debut = moment(this.eventDetails.date_debut).format('Y-MM-DD hh:mm:ss');
     this.eventDetails.date_fin = moment(this.eventDetails.date_fin).format('Y-MM-DD hh:mm:ss');
     this.eventService.createEvent(this.eventDetails).subscribe((data: {}) => {

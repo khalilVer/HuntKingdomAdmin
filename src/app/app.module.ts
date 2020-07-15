@@ -25,6 +25,7 @@ import { DateTimePicker } from '@syncfusion/ej2-calendars';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 import { AddEventComponent } from './categorieEvent/add-event/add-event.component';
 import { ListEventComponent } from './categorieEvent/list-event/list-event.component';
+import { EditEventComponent } from './categorieEvent/edit-event/edit-event.component';
 
 const ROUTES: Routes = [
     {path: 'dashbord', component: DashbordComponent},
@@ -38,7 +39,9 @@ const ROUTES: Routes = [
     {path: 'addCategorie', component: AddCategorieComponent},
     {path: 'allCategorie', component: ListCategorieComponent},
     {path: 'addEvent', component: AddEventComponent},
-    {path: 'allEvent', component: ListEventComponent}
+    {path: 'allEvent', component: ListEventComponent},
+    {path: 'editEvent/:id', component: EditEventComponent},
+
 
 ];
 
@@ -58,7 +61,8 @@ const ROUTES: Routes = [
     ListCategorieComponent,
     AddCategorieComponent,
     AddEventComponent,
-    ListEventComponent
+    ListEventComponent,
+    EditEventComponent
   ],
   imports: [
       BrowserModule,
