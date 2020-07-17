@@ -4,6 +4,7 @@ import { Thread } from '../Model/thread';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 import { Overwatch } from '../Model/overwatch';
+import { notification } from '../Model/notification';
 
 
 @Injectable({
@@ -57,7 +58,7 @@ getThreadsToValidate(): Observable<Thread> {
 }
 
 createNotif(notif) {
-    return this.http.post<any>(this.apiURL + '/notif/new', notif, this.httpOptions);
+    return this.http.post<notification>(this.apiURL + '/notif/new',  JSON.stringify(notif), this.httpOptions);
 }
 
 deleteThread(id) {
