@@ -9,6 +9,11 @@
                             All Events
                         </h2>
                     </div>
+                    <div class="pull-right" style="margin-right: 10px;">
+                        <label class="control-label">Search</label>
+                        <input type="text" class="form-control" [(ngModel)]="search" (change)="searchEvent()"/>
+                    </div>
+                    <div class="clearfix"></div>
                     <div class="body">
                         <div class="table-responsive">
                             <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
@@ -18,7 +23,7 @@
                                     <th>Nom</th>
                                     <th>type</th>
                                     <th>adresse</th>
-                                    <th>latitude</th>
+                                    <th>Description</th>
                                     <th>langitude</th>
                                     <th>dateDebut</th>
                                     <th>dateFin</th>
@@ -35,7 +40,7 @@
                                     <td>{{p.nom}}</td>
                                     <td>{{p.type}}</td>
                                     <td>{{p.adresse}}</td>
-                                    <td>{{p.latitude}}</td>
+                                    <td>{{p.description}}</td>
                                     <td>{{p.langitude}}</td>
                                     <td>{{p.date_debut}}</td>
                                     <td>{{p.date_fin}}</td>

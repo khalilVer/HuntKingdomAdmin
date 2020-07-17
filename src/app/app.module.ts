@@ -20,12 +20,13 @@ import { ValidateThreadCompComponent } from './validate-thread-comp/validate-thr
 import { OverwatchSectionCompComponent } from './overwatch-section-comp/overwatch-section-comp.component';
 import { ListCategorieComponent } from './categorieEvent/list-categorie/list-categorie.component';
 import { AddCategorieComponent } from './categorieEvent/add-categorie/add-categorie.component';
-import { ScheduleModule, RecurrenceEditorModule, DayService, WeekService, WorkWeekService, MonthService, MonthAgendaService } from '@syncfusion/ej2-angular-schedule';
 import { DateTimePicker } from '@syncfusion/ej2-calendars';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 import { AddEventComponent } from './categorieEvent/add-event/add-event.component';
 import { ListEventComponent } from './categorieEvent/list-event/list-event.component';
 import { EditEventComponent } from './categorieEvent/edit-event/edit-event.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 const ROUTES: Routes = [
     {path: 'dashbord', component: DashbordComponent},
@@ -69,9 +70,9 @@ const ROUTES: Routes = [
       FormsModule,
       RouterModule.forRoot(ROUTES),
       HttpClientModule,
-      ScheduleModule, RecurrenceEditorModule
+      ReactiveFormsModule
   ],
-  providers: [ProduitServiceService, CategorieService, EventService, DayService, WeekService, WorkWeekService, MonthService, MonthAgendaService],
+  providers: [ProduitServiceService, CategorieService, EventService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

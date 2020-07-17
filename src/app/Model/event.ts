@@ -4,6 +4,7 @@ export class Event {
     nom: string;
     type : string;
     adresse : string;
+    description : String;
     latitude : string;
     langitude : string;
     dateDebut : Date ;

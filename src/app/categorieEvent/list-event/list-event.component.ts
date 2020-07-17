@@ -9,6 +9,8 @@ import { Component, OnInit } from '@angular/core';
 export class ListEventComponent implements OnInit {
 
   events : any = [];
+  originalEvents: any = [];
+  search: string;
   constructor(private eventService: EventService) { }
 ngOnInit() {
     this.loadEvents();
@@ -18,9 +20,21 @@ ngOnInit() {
       return this.eventService.getEvents().subscribe((data: Event[]) => {
        
           this.events = data;
+          this.originalEvents = data;
           console.log('*********************');
           console.log(this.events);
       });
+  }
+
+  searchEvent() {
+    console.log('ori', this.originalEvents, this.events, this.search);
+    if (!this.search) {
+      console.log('this.Search', this.search, this.originalEvents);
+      this.events = this.originalEvents;
+    }
+    this.events = this.events.filter(event => {
+      return event.nom.indexOf(this.search) >= 0;
+    })
   }
 
   deleteEvent(id) {
