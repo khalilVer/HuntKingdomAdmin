@@ -29,7 +29,7 @@
                                     <td>{{p.description}}</td>
                                     <td>{{ getRatio(p) }} %</td>
                                     <td>{{p.creationdate}}</td>
-                                    <td><button class="btn btn-danger waves-effect" (click)="deleteThread(p.id)">Delete</button></td>
+                                    <td><button class="btn btn-danger waves-effect" (click)="deleteThread(p.id,p.creatoruser)">Delete</button></td>
                                 </tr>
                                 </tbody>
                             </table>

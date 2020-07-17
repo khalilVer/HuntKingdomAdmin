@@ -28,8 +28,7 @@ export class ListeThreadCompComponent implements OnInit {
   deleteThread(id,userid) {
     var reason: string ;
     if (reason = window.prompt('Are you sure, you want to delete? Please enters the reason to notifty the creator of this thread')) {
-      
-      const notif : notification = {id : null, userid , content : reason};
+      const notif : notification = {id : null, userid , content : reason, date : new Date().toString()};
       this.threadService.createNotif(notif);
       this.threadService.deleteThread(id).subscribe(data => {
             this.loadThreads();

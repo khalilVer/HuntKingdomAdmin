@@ -56,13 +56,8 @@ getThreadsToValidate(): Observable<Thread> {
         );
 }
 
-//pas encore terminé
-createNotif(id) {
-    return this.http.post<Thread>(this.apiURL + '/produits/new', JSON.stringify(id), this.httpOptions)
-            .pipe(
-                retry(1),
-                catchError(this.handleError)
-            );
+createNotif(notif) {
+    return this.http.post<any>(this.apiURL + '/notif/new', notif, this.httpOptions);
 }
 
 deleteThread(id) {
