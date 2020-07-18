@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ThreadServiceService } from '../service/thread-service.service';
 import { Thread } from '../Model/thread';
+import { notification } from '../Model/notification';
 
 @Component({
   selector: 'app-liste-thread-comp',
@@ -24,11 +25,24 @@ export class ListeThreadCompComponent implements OnInit {
     });
   }
 
-  deleteThread(id) {
-    if (window.confirm('Are you sure, you want to delete?')) {
-        this.threadService.deleteThread(id).subscribe(data => {
+  deleteThread(id,userid) {
+    var reason: string ;
+    if (reason = window.prompt('Are you sure, you want to delete? Please enters the reason to notifty the creator of this thread')) {
+      //notif
+      //const notif : notification = {userid , content : reason, date : new Date().toString()};
+      let notif: notification = new notification();
+      notif.userid = userid;
+      notif.content = reason;
+      notif.date = new Date().toString();
+      console.log(notif);
+
+      this.threadService.createNotif(notif);
+      
+      this.threadService.deleteThread(id).subscribe(data => {
+      
             this.loadThreads();
         });
+        
     }
   }
 

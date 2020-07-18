@@ -3,6 +3,8 @@ import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Thread } from '../Model/thread';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
+import { Overwatch } from '../Model/overwatch';
+import { notification } from '../Model/notification';
 
 
 @Injectable({
@@ -22,6 +24,23 @@ export class ThreadServiceService {
 
   constructor(private http: HttpClient) { }
 
+
+  // Subjects services
+
+
+//return list subjects
+getSubjects(): Observable<Overwatch> {
+    return this.http.get<Overwatch>( this.apiURL + '/overwatch')
+        .pipe(
+            retry(1),
+            catchError(this.handleError)
+        );
+}
+
+
+
+//End Subjects services
+
   getThreads(): Observable<Thread> {
     return this.http.get<Thread>( this.apiURL + '/threadsvalid')
         .pipe(
@@ -38,9 +57,28 @@ getThreadsToValidate(): Observable<Thread> {
         );
 }
 
+createNotif(notif) {
+    return this.http.post<notification>(this.apiURL + '/notif/new',  JSON.stringify(notif), this.httpOptions);
+}
 
 deleteThread(id) {
     return this.http.delete<Thread>(this.apiURL + '/threads/' + id + '/delete', this.httpOptions)
+        .pipe(
+            retry(1),
+            catchError(this.handleError)
+        );
+}
+
+ignoreSubject(id) {
+    return this.http.delete<Overwatch>(this.apiURL + '/overwatch/' + id + '/ignore', this.httpOptions)
+        .pipe(
+            retry(1),
+            catchError(this.handleError)
+        );
+}
+
+deleteSubject(id) {
+    return this.http.delete<Overwatch>(this.apiURL + '/overwatch/' + id + '/delete', this.httpOptions)
         .pipe(
             retry(1),
             catchError(this.handleError)
@@ -76,4 +114,7 @@ handleError(error) {
     window.alert(errorMessage);
     return throwError(errorMessage);
 }
+
+
+
 }

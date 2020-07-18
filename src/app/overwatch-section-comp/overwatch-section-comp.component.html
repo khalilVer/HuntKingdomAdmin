@@ -14,23 +14,28 @@
                             <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
                                 <thead>
                                 <tr>
+                                    <th>Subject Type</th>
                                     <th>Subject Identifier</th>
-                                    <th>Type</th>                                 
+                                    <th>Reason</th>                                 
                                     <th>Number of reports</th>
-                                    <th>Details</th>
-                                    <th>Remove</th>
-                                    <th>Ignore</th>
+                                    <th>View Subject</th>
+                                    <th></th>
+                                    <th></th>
                                 </tr>
                                 </thead>
                                 <tbody >
-                                <tr *ngFor="let p of Threads">
-                                    <td>{{p.topic}}</td>
-                                    <td>{{p.title}}</td>
-                                    <td>{{p.description}}</td>
-                                    <td>{{p.upvote}}</td>
-                                    <td>{{p.downvote}}</td>
-                                    <td>{{p.creationdate}}</td>
-                                    <td><button class="btn btn-danger waves-effect" (click)="deleteProduit(p.id)">Remove</button></td>
+                                <tr *ngFor="let p of Subjects">
+                                    <td>{{p.type}}</td>
+                                    <td>{{p.subject_id}}</td>
+                                    <td>{{p.reason}}</td>
+                                    <td>{{p.report_nb}}</td>
+                                    <td>
+                                        <button class="btn bg-blue waves-effect" (click)="viewSubject(p.id)">
+                                        <i class="material-icons">search</i>
+                                        </button>
+                                    </td>
+                                    <td><button class="btn btn-danger waves-effect" (click)="deleteSubject(p.id)">Remove</button></td>
+                                    <td><button class="btn btn-lime waves-effect" (click)="ignoreSubject(p.id)">Ignore</button></td>
                                 </tr>
                                 </tbody>
                             </table>

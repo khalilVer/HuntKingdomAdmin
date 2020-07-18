@@ -17,7 +17,6 @@
                                     <th>Topic</th>
                                     <th>Title</th>
                                     <th>Description</th>
-                                    <th>Details</th>
                                     <th></th>
                                     <th></th>
                                 </tr>
@@ -27,14 +26,8 @@
                                     <td>{{p.topic}}</td>
                                     <td>{{p.title}}</td>
                                     <td>{{p.description}}</td>
-                                    <td>
-                                        
-                                        <button class="btn bg-blue waves-effect" (click)="deleteProduit(p.id)">
-                                        <i class="material-icons">search</i>
-                                        </button>
-                                    </td>
-                                    <td><button class="btn bg-teal waves-effect" (click)="deleteProduit(p.id)">Validate</button></td>
-                                    <td><button class="btn btn-danger waves-effect" (click)="deleteProduit(p.id)">Reject</button></td>
+                                    <td><button class="btn bg-teal waves-effect" (click)="validateThread(p.id)">Validate</button></td>
+                                    <td><button class="btn btn-danger waves-effect" (click)="deleteThread(p.id)">Reject</button></td>
                                 </tr>
                                 </tbody>
                             </table>

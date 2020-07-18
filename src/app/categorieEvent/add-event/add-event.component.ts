@@ -3,7 +3,8 @@ import { Router } from '@angular/router';
 import { EventService } from './../../service/event.service';
 
 import { Component, OnInit } from '@angular/core';
- 
+import * as moment from 'moment';
+
 @Component({
   selector: 'app-add-event',
   templateUrl: './add-event.component.html',
@@ -26,7 +27,9 @@ export class AddEventComponent implements OnInit {
   
  
   
-  addCategory() {
+  addEvent() {
+    this.eventDetails.date_debut = moment(this.eventDetails.date_debut).format('Y-MM-DD hh:mm:ss');
+    this.eventDetails.date_fin = moment(this.eventDetails.date_fin).format('Y-MM-DD hh:mm:ss');
     this.eventService.createEvent(this.eventDetails).subscribe((data: {}) => {
 
         this.router.navigate(['/allEvent']);
