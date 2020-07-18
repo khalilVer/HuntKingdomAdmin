@@ -26,6 +26,8 @@ import { AddEventComponent } from './categorieEvent/add-event/add-event.componen
 import { ListEventComponent } from './categorieEvent/list-event/list-event.component';
 import { EditEventComponent } from './categorieEvent/edit-event/edit-event.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
 
 
 const ROUTES: Routes = [
@@ -70,7 +72,8 @@ const ROUTES: Routes = [
       FormsModule,
       RouterModule.forRoot(ROUTES),
       HttpClientModule,
-      ReactiveFormsModule
+      ReactiveFormsModule,
+      Ng2SearchPipeModule
   ],
   providers: [ProduitServiceService, CategorieService, EventService],
   bootstrap: [AppComponent]

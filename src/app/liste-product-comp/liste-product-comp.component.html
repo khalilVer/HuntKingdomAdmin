@@ -13,9 +13,16 @@
                         <h2>
                             All Products
                         </h2>
+
                     </div>
                     <div class="body">
+                        <div class="row">
+                            <div class="search-hero col-md-offset-9 col-md-3" >
+                                <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Search Here">
+                            </div>
+                        </div>
                         <div class="table-responsive">
+
                             <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
                                 <thead>
                                 <tr>
@@ -33,7 +40,7 @@
                                 </tr>
                                 </thead>
                                 <tbody >
-                                <tr *ngFor="let p of Produits">
+                                <tr *ngFor="let p of Produits | filter:searchText">
                                     <td>{{p.id}}</td>
                                     <td>{{p.reference}}</td>
                                     <td>{{p.libelle}}</td>
