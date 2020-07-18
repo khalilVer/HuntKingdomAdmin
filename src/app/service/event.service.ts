@@ -9,7 +9,7 @@ import {catchError, retry} from 'rxjs/operators';
 export class EventService {
 
    // Define API
-   apiURL = 'http://localhost/PI/HuntersKingdom/web/app_dev.php/event';
+   apiURL = '/pi/hunterskingdom/web/app_dev.php/event';
 
    // Http Options
    httpOptions = {

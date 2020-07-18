@@ -9,7 +9,7 @@ import {catchError, retry} from 'rxjs/operators';
 export class CategorieService {
 
    // Define API
-   apiURL = 'http://localhost/PI/HuntersKingdom/web/app_dev.php/categorie';
+   apiURL = '/pi/hunterskingdom/web/app_dev.php/categorie';
 
    // Http Options
    httpOptions = {
