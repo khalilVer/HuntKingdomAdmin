@@ -8,6 +8,7 @@ import {CommandeServiceService} from '../service/commande-service.service';
 })
 export class ListeCommandeCompComponent implements OnInit {
 
+    searchText;
     commandes: any = [];
     constructor(private commandeService: CommandeServiceService) { }
     ngOnInit() {
