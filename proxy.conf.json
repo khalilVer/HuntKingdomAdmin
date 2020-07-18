@@ -1,6 +1,6 @@
 {
   "/pi/*": {
-    "target": "http://localhost/PI",
+    "target": "http://localhost",
     "secure": false,
     "logLevel": "debug",
     "changeOrigin": true
