@@ -15,6 +15,11 @@
                         </h2>
                     </div>
                     <div class="body">
+                        <div class="row">
+                            <div class="search-hero col-md-offset-9 col-md-3" >
+                                <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Search Here">
+                            </div>
+                        </div>
                         <div class="table-responsive">
                             <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
                                 <thead>
@@ -26,11 +31,13 @@
                                     <th>DATE ACHAT</th>
                                     <th>VALIDE</th>
                                     <th>PRODUCTS NUMBER</th>
-                                    <th>USER</th>
+                                    <th>USER ID</th>
+                                    <th>DELETE</th>
+                                    <th>VALIDATE</th>
                                 </tr>
                                 </thead>
                                 <tbody >
-                                <tr *ngFor="let p of commandes">
+                                <tr *ngFor="let p of commandes | filter:searchText">
                                     <td>{{p.id}}</td>
                                     <td>{{p.numero_commande}}</td>
                                     <td>{{p.quantite_total}}</td>

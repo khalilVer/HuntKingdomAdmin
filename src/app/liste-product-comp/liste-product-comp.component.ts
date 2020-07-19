@@ -9,6 +9,7 @@ import {ProduitServiceService} from '../service/produit-service.service';
 })
 export class ListeProductCompComponent implements OnInit {
 
+    searchText;
     Produits: any = [];
     constructor(private produitService: ProduitServiceService) { }
   ngOnInit() {
