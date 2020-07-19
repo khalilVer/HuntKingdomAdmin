@@ -78,11 +78,8 @@ ignoreSubject(id) {
 }
 
 deleteSubject(id) {
-    return this.http.delete<Overwatch>(this.apiURL + '/overwatch/' + id + '/delete', this.httpOptions)
-        .pipe(
-            retry(1),
-            catchError(this.handleError)
-        );
+    console.log(this.apiURL + '/overwatch/' + id + '/delete');
+    return this.http.delete<Overwatch>(this.apiURL + '/overwatch/' + id + '/delete', this.httpOptions);
 }
 
 validateThread(id) {
