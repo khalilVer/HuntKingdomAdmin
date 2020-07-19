@@ -27,7 +27,10 @@ ngOnInit() {
   }
 
   searchEvent() {
-    console.log('ori', this.originalEvents, this.events, this.search);
+    console.log('ori', this.originalEvents);
+    console.log('ori1', this.events);
+    console.log('ori2',  this.search);
+
     if (!this.search) {
       console.log('this.Search', this.search, this.originalEvents);
       this.events = this.originalEvents;

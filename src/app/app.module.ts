@@ -27,6 +27,7 @@ import { ListEventComponent } from './categorieEvent/list-event/list-event.compo
 import { EditEventComponent } from './categorieEvent/edit-event/edit-event.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
+import { EditCategorieComponent } from './categorieEvent/edit-categorie/edit-categorie.component';
 
 const ROUTES: Routes = [
     {path: 'dashbord', component: DashbordComponent},
@@ -63,7 +64,9 @@ const ROUTES: Routes = [
     AddCategorieComponent,
     AddEventComponent,
     ListEventComponent,
-    EditEventComponent
+    EditEventComponent,
+    EditCategorieComponent
+    
   ],
   imports: [
       BrowserModule,
