@@ -26,8 +26,8 @@
                                     <td>{{p.topic}}</td>
                                     <td>{{p.title}}</td>
                                     <td>{{p.description}}</td>
-                                    <td><button class="btn bg-teal waves-effect" (click)="validateThread(p.id)">Validate</button></td>
-                                    <td><button class="btn btn-danger waves-effect" (click)="deleteThread(p.id)">Reject</button></td>
+                                    <td><button class="btn bg-teal waves-effect" (click)="validateThread(p.id,p.creatoruser,p.title)">Validate</button></td>
+                                    <td><button class="btn btn-danger waves-effect" (click)="deleteThread(p.id,p.creatoruser,p.title)">Reject</button></td>
                                 </tr>
                                 </tbody>
                             </table>

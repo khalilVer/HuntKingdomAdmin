@@ -4,5 +4,6 @@ export class Overwatch {
     reason: string;
     subjectId: string;
     reportNb: string;
+    userid : string;
 
 }
