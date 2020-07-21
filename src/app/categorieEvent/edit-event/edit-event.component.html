@@ -23,7 +23,7 @@
                                         <i class="material-icons">credit_card</i>
                                     </span>
                                     <div class="form-line">
-                                        <input type="text" [(ngModel)]="eventDetails.nom" class="form-control key" placeholder="Ex: Event-Fishing">
+                                        <input type="text" [(ngModel)]="eventData.nom" class="form-control key" placeholder="Ex: Event-Fishing">
                                     </div>
                                 </div>
                             </div>
@@ -34,7 +34,7 @@
                                                     <i class="material-icons">location_on</i>
                                                 </span>
                                     <div class="form-line">
-                                        <input type="text" [(ngModel)]="eventDetails.adresse" class="form-control credit-card" placeholder="Ex: PRODUIT-X">
+                                        <input type="text" [(ngModel)]="eventData.adresse" class="form-control credit-card" placeholder="Ex: PRODUIT-X">
                                     </div>
                                 </div>
                             </div>
@@ -45,7 +45,7 @@
                                                     <i class="material-icons">date_range</i>
                                                 </span>
                                     <div class="form-line">
-                                        <input type="datetime-local" [(ngModel)]="eventDetails.date_debut" class="form-control date" placeholder="Ex: 30/07/2020">
+                                        <input type="datetime-local" [(ngModel)]="eventData.date_debut" class="form-control date" placeholder="Ex: 30/07/2020">
                                     </div>
                                 </div>
                             </div>
@@ -56,7 +56,7 @@
                                                     <i class="material-icons">date_range</i>
                                                 </span>
                                     <div class="form-line">
-                                        <input type="datetime-local" [(ngModel)]="eventDetails.date_fin" class="form-control date" placeholder="Ex: 30/07/2020">
+                                        <input type="datetime-local" [(ngModel)]="eventData.date_fin" class="form-control date" placeholder="Ex: 30/07/2020">
                                     </div>
                                 </div>
                             </div>
@@ -69,7 +69,7 @@
                                     </span>
                                     <div class="form-group form-float">
                                         <div class="form-line">
-                                            <textarea name="description" [(ngModel)]="eventDetails.description" cols="30" rows="2" class="form-control no-resize" required ></textarea>
+                                            <textarea name="description" [(ngModel)]="eventData.description" cols="30" rows="2" class="form-control no-resize" required ></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -80,7 +80,7 @@
                                 <div class="input-group">
     
                                     <div class="form-line">
-                                        <select [(ngModel)]="eventDetails.type" class="form-control show-tick">
+                                        <select [(ngModel)]="eventData.type" class="form-control show-tick">
                                             <option></option>
                                             <option>Hunting</option>
                                             <option>Fishing</option>
@@ -92,7 +92,7 @@
                                 <b>Category</b>
                                 <div class="input-group">
                                     <div class="form-line">
-                                        <select [(ngModel)]="eventDetails.categorie" class="form-control">
+                                        <select [(ngModel)]="eventData.categorie" class="form-control">
                                             <option></option>
                                             <option *ngFor="let category of categoriesList" [ngValue]="category">
                                                 {{category.nom }}
@@ -107,7 +107,7 @@
                                     <span class="input-group-addon">
                                         <i class="material-icons">accessibility</i>                                    </span>
                                     <div class="form-line">
-                                        <input type="number" [(ngModel)]="eventDetails.nbr_participent" class="form-control " placeholder="00">
+                                        <input type="number" [(ngModel)]="eventData.nbr_participent" class="form-control " placeholder="00">
                                     </div>
                                 </div>
                             </div>

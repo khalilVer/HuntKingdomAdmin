@@ -30,7 +30,7 @@
                                     <td>{{p.description}}</td>
                                     <td>{{ getRatio(p) }} %</td>
                                     <td>{{p.creationdate}}</td>
-                                    <td><button class="btn btn-lg btn-outline-primary" (click)="open()">Launch demo modal</button><button class="btn btn-danger waves-effect" (click)="deleteThread(p.id,p.creatoruser)">Delete</button></td>
+                                    <td><button class="btn btn-danger waves-effect" (click)="deleteThread(p.id,p.creatoruser,p.title)">Delete</button></td>
                                 </tr>
                                 </tbody>
                             </table>

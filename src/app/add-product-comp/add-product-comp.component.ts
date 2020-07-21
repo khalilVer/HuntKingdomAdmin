@@ -9,7 +9,9 @@ import {Router} from '@angular/router';
 })
 export class AddProductCompComponent implements OnInit {
 
-     productDetails = { reference: '', libelle: '', date: '', prix: 0, categorie: '', description: '', image: '', type: '' }
+     date: Date = new Date();
+     dateProduit = this.date.getDate() + ' / ' + (this.date.getMonth() + 1) + ' / ' + this.date.getFullYear();
+     productDetails = { reference: '', libelle: '', date: this.dateProduit, prix: 0, categorie: '', description: '', image: '', type: '' }
 
     constructor(private produitService: ProduitServiceService, public router: Router
     ) { }
