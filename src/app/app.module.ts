@@ -27,6 +27,10 @@ import { ListEventComponent } from './categorieEvent/list-event/list-event.compo
 import { EditEventComponent } from './categorieEvent/edit-event/edit-event.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { OffreComponent } from './offre/offre.component';
+import { DemandeComponent } from './demande/demande.component';
+import {OffreService} from './service/offre.service';
+import {DemandeService} from './service/demande.service';
 
 
 import { EditCategorieComponent } from './categorieEvent/edit-categorie/edit-categorie.component';
@@ -45,6 +49,8 @@ const ROUTES: Routes = [
     {path: 'addEvent', component: AddEventComponent},
     {path: 'allEvent', component: ListEventComponent},
     {path: 'editEvent/:id', component: EditEventComponent},
+    {path: 'offre', component: OffreComponent},
+    {path: 'demande', component: DemandeComponent},
 
 
 ];
@@ -67,8 +73,9 @@ const ROUTES: Routes = [
     AddEventComponent,
     ListEventComponent,
     EditEventComponent,
-    EditCategorieComponent
-    
+    EditCategorieComponent,
+    OffreComponent,
+    DemandeComponent
   ],
   imports: [
       BrowserModule,
@@ -78,7 +85,7 @@ const ROUTES: Routes = [
       ReactiveFormsModule,
       Ng2SearchPipeModule
   ],
-  providers: [ProduitServiceService, CategorieService, EventService],
+  providers: [ProduitServiceService, CategorieService, EventService, OffreService, DemandeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
