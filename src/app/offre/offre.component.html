@@ -15,14 +15,14 @@
                 <thead>
                 <tr>
                   <th>ID</th>
-                  <th>titre</th>
-                  <th>type</th>
-                  <th>adresse</th>
-                  <th>description</th>
-                  <th>etat</th>
-                  <th>deadline</th>
-                  <th>datePublication</th>
-                  <th>Validation</th>
+                  <th>Titre</th>
+                  <th>Adresse</th>
+                  <th>Description</th>
+                  <th>Etat</th>
+                  <th>Deadline</th>
+                  <th>DatePublication</th>
+                  <th>Catégorie</th>
+                  <th>Modifier</th>
                   <th>DELETE</th>
                 </tr>
                 </thead>
@@ -30,13 +30,13 @@
                 <tr *ngFor="let p of Offres">
                   <td>{{p.id}}</td>
                   <td>{{p.titre}}</td>
-                  <td>{{p.type}}</td>
                   <td>{{p.adresse}}</td>
                   <td>{{p.description}}</td>
                   <td>{{p.etat}}</td>
                   <td>{{p.deadline}}</td>
                   <td>{{p.datePublication}}</td>
-                  <td><button class="btn btn-primary waves-effect" routerLink="">Validate</button></td>
+                  <td>{{p.categorie}}</td>
+                  <td><button class="btn btn-primary waves-effect" routerLink="/editOffre/{{p.id}}">Modifier</button></td>
                   <td><button class="btn btn-danger waves-effect" (click)="deleteOffre(p.id)">DELETE</button></td>
                 </tr>
                 </tbody>

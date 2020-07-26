@@ -34,6 +34,12 @@ import {DemandeService} from './service/demande.service';
 
 
 import { EditCategorieComponent } from './categorieEvent/edit-categorie/edit-categorie.component';
+import { AddBuyComponent } from './add-buy/add-buy.component';
+import {BuyService} from './service/buy.service';
+import { EditBuyComponent } from './edit-buy/edit-buy.component';
+import {SellService} from './service/sell.service';
+import { AddSellComponent } from './add-sell/add-sell.component';
+import { EditSellComponent } from './edit-sell/edit-sell.component';
 
 const ROUTES: Routes = [
     {path: 'dashbord', component: DashbordComponent},
@@ -49,8 +55,14 @@ const ROUTES: Routes = [
     {path: 'addEvent', component: AddEventComponent},
     {path: 'allEvent', component: ListEventComponent},
     {path: 'editEvent/:id', component: EditEventComponent},
-    {path: 'offre', component: OffreComponent},
-    {path: 'demande', component: DemandeComponent},
+    {path: 'offre', component: AddBuyComponent},
+    {path: 'demande', component: AddSellComponent},
+    {path: 'allOffre', component: OffreComponent},
+    {path: 'editOffre/:id', component: EditBuyComponent},
+    {path: 'editDemande/:id', component: EditSellComponent},
+    {path: 'allDemande', component: DemandeComponent},
+
+    {path: 'editCategorie/:id', component: EditCategorieComponent}
 
 
 ];
@@ -75,7 +87,11 @@ const ROUTES: Routes = [
     EditEventComponent,
     EditCategorieComponent,
     OffreComponent,
-    DemandeComponent
+    DemandeComponent,
+    AddBuyComponent,
+    EditBuyComponent,
+    AddSellComponent,
+    EditSellComponent
   ],
   imports: [
       BrowserModule,
@@ -85,7 +101,7 @@ const ROUTES: Routes = [
       ReactiveFormsModule,
       Ng2SearchPipeModule
   ],
-  providers: [ProduitServiceService, CategorieService, EventService, OffreService, DemandeService],
+  providers: [ProduitServiceService, CategorieService, EventService, OffreService, DemandeService, BuyService, SellService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

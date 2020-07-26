@@ -1,0 +1,157 @@
+<!--<form align="right">-->
+<!--  <div class="form-group" align="center">-->
+<!--    <div class="container" >-->
+<!--      <div class="row">-->
+<!--        <div class="col-xs-4 "></div>-->
+
+<!--        <div class="col-xs-6 ">-->
+<!--          <br><br><br><br><br>-->
+<!--          <label>Titre</label>-->
+<!--          <input type="text" class="form-control" name="Title" [(ngModel)]="details.titre" required #a="ngModel">-->
+<!--          <br>-->
+<!--          <div class="alert alert-danger" *ngIf="a.invalid">-->
+<!--            Titre obligatoire-->
+<!--          </div>-->
+
+<!--          <label>Type</label><br>-->
+<!--          <div class="input-group mb-3">-->
+<!--            <div class="input-group-prepend">-->
+<!--              <label class="input-group-text" for="inputGroupSelect01"></label>-->
+<!--            </div>-->
+<!--            <select class="custom-select" id="inputGroupSelect01" name="type" [(ngModel)]="details.categorie" required #b="ngModel">-->
+<!--              <option selected>Choix...</option>-->
+<!--              <option value="1">Fishing</option>-->
+<!--              <option value="2">Hunting</option>-->
+<!--            </select>-->
+<!--          </div>-->
+<!--          <div class="alert alert-danger" *ngIf="b.invalid">-->
+<!--            Categorie obligatoire-->
+<!--          </div>-->
+
+
+<!--          <label>Adresse</label>-->
+<!--          <input type="text" class="form-control" name="adr" [(ngModel)]="details.adresse" required #c="ngModel" placeholder="Disponible à">-->
+<!--          <br>-->
+<!--          <div class="alert alert-danger" *ngIf="c.invalid">-->
+<!--            Adresse obligatoire-->
+<!--          </div>-->
+
+<!--          <label>Description</label>-->
+<!--          <textarea rows="6" class="form-control" name="desc"></textarea>-->
+<!--          <br>-->
+<!--          <label>Deadline</label>-->
+<!--          <input type="date" class="form-control" name="dd" [(ngModel)]="details.deadline" required #d="ngModel" placeholder="Date d'expiration">-->
+<!--          <br>-->
+<!--          <div class="alert alert-danger" *ngIf="d.invalid">-->
+<!--            Deadline obligatoire-->
+<!--          </div>-->
+<!--          <label>Date de publication</label>-->
+<!--          <input type="date" id="date" name="trip-start"-->
+<!--                  [(ngModel)]="details.datePublication">-->
+<!--          <br>-->
+<!--          <input class="btn btn-primary" type="submit" value="Valider" (click)="addOffre()"><br><br>-->
+<!--          <input class="btn btn-primary" type="reset" value="Annuler">-->
+
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</form>-->
+
+
+<!-- Masked Input -->
+<section class="content">
+  <div class="container-fluid">
+
+    <div class="row clearfix">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card">
+          <div class="header">
+            <h2>
+              Edit Offre
+            </h2>
+
+          </div>
+          <div class="body">
+            <div class="demo-masked-input">
+              <div class="row clearfix">
+                <div class="col-md-3">
+                  <b>Titre</b>
+                  <div class="input-group">
+
+                    <div class="form-line">
+                      <input type="text" [(ngModel)]="details.titre" class="form-control key" >
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <b>Adresse</b>
+                  <div class="input-group">
+                    <div class="form-line">
+                      <input type="text" [(ngModel)]="details.adresse" class="form-control credit-card" >
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <b>Date de publication</b>
+                  <div class="input-group">
+                    <div class="form-line">
+                      <input type="date" [(ngModel)]="details.datePublication" class="form-control date" >
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <b>Date d'expiration</b>
+                  <div class="input-group">
+                    <div class="form-line">
+                      <input type="date" [(ngModel)]="details.deadline" class="form-control date" >
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <b>Description</b>
+                  <div class="input-group">
+                    <div class="form-group form-float">
+                      <div class="form-line">
+                        <textarea name="description" [(ngModel)]="details.description" cols="30" rows="2" class="form-control no-resize" required ></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <b>Categorie</b>
+                  <div class="input-group">
+
+                    <div class="form-line">
+                      <select [(ngModel)]="details.categorie" class="form-control show-tick">
+                        <option></option>
+                        <option>Hunting</option>
+                        <option>Fishing</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <b>Types</b>
+                  <div class="input-group">
+
+                    <div class="form-line">
+                      <select [(ngModel)]="details.etat" class="form-control show-tick">
+                        <option></option>
+                        <option>En cours</option>
+                        <option>Vendu</option>
+                        <option>Expiré</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="btn btn-success waves-effect" (click)="updateOffre()">Done</button> <br><br>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
