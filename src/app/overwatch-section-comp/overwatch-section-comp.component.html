@@ -30,7 +30,7 @@
                                     <td>{{p.reason}}</td>
                                     <td>{{p.report_nb}}</td>
                                     <td>
-                                        <button class="btn bg-blue waves-effect" (click)="viewSubject(p.id)">
+                                        <button class="btn bg-blue waves-effect" (click)="viewSubject(p.subject_id,p.type)" data-toggle="modal" data-target="#defaultModal">
                                         <i class="material-icons">search</i>
                                         </button>
                                     </td>
@@ -47,3 +47,24 @@
         <!-- #END# Basic Examples -->
     </div>
 </section>
+<div class="modal fade" id="defaultModal" tabindex="-1" role="dialog" style="display: none; padding-right: 17px;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="defaultModalLabel">Reported Subject</h4>
+            </div>
+            <div class="modal-body">
+                <h6>Content:</h6>
+                {{viewedThread.description}}
+                {{viewedComment.comment }}
+                <br>
+                <h6>Writer user:</h6>
+                {{viewedThread.creatoruser}}
+                {{viewedComment.writer }}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">CLOSE</button>
+            </div>
+        </div>
+    </div>
+</div>
