@@ -21,9 +21,11 @@
                                                 <i class="material-icons">vpn_key</i>
                                             </span>
                                 <div class="form-line">
-                                    <input type="text" [(ngModel)]="productDetails.reference" class="form-control key" placeholder="Ex: RF-XX00000">
+                                    <input type="text" [(ngModel)]="productDetails.reference" class="form-control key" placeholder="Ex: RF-XX00000" required #a="ngModel">
                                 </div>
                             </div>
+                            <div class="alert alert-danger" *ngIf="a.invalid">Reference obligatoire !</div>
+
                         </div>
                         <div class="col-md-4">
                             <b>Libelle</b>
@@ -32,9 +34,11 @@
                                                 <i class="material-icons">credit_card</i>
                                             </span>
                                 <div class="form-line">
-                                    <input type="text" [(ngModel)]="productDetails.libelle" class="form-control credit-card" placeholder="Ex: PRODUIT-X">
+                                    <input type="text" [(ngModel)]="productDetails.libelle" class="form-control credit-card" placeholder="Ex: PRODUIT-X" required #b="ngModel">
                                 </div>
                             </div>
+                            <div class="alert alert-danger" *ngIf="b.invalid">Libelle obligatoire !</div>
+
                         </div>
                         <div class="col-md-4">
                             <b>Date d'ajout</b>
@@ -63,9 +67,11 @@
                             <div class="input-group">
                                 <div class="form-group form-float">
                                     <div class="form-line">
-                                        <textarea name="description" [(ngModel)]="productDetails.image" cols="30" rows="2" class="form-control no-resize" required ></textarea>
+                                        <textarea name="description" [(ngModel)]="productDetails.image" cols="30" rows="2" class="form-control no-resize"  required #c="ngModel"></textarea>
                                     </div>
                                 </div>
+                                <div class="alert alert-danger" *ngIf="c.invalid">Image obligatoire !</div>
+
                             </div>
                         </div>
 
@@ -74,12 +80,14 @@
                             <div class="input-group">
 
                                 <div class="form-line">
-                                    <select [(ngModel)]="productDetails.categorie" class="form-control show-tick">
+                                    <select [(ngModel)]="productDetails.categorie" class="form-control show-tick" required #d="ngModel">
                                         <option></option>
                                         <option>Hunting</option>
                                         <option>Fishing</option>
                                     </select>
                                 </div>
+                                <div class="alert alert-danger" *ngIf="d.invalid">Categorie obligatoire !</div>
+
                             </div>
                         </div>
                         <div class="col-md-3">
@@ -87,12 +95,14 @@
                             <div class="input-group">
 
                                 <div class="form-line">
-                                    <select [(ngModel)]="productDetails.type" class="form-control show-tick">
+                                    <select [(ngModel)]="productDetails.type" class="form-control show-tick" required #e="ngModel">
                                         <option></option>
                                         <option>SELL</option>
                                         <option>LOAN</option>
                                     </select>
                                 </div>
+                                <div class="alert alert-danger" *ngIf="e.invalid">Type obligatoire !</div>
+
                             </div>
                         </div>
                         <div class="col-md-3">
@@ -102,14 +112,16 @@
                                                 <i class="material-icons">attach_money</i>
                                             </span>
                                 <div class="form-line">
-                                    <input type="text" [(ngModel)]="productDetails.prix" class="form-control money-dollar" placeholder="Ex: 99,99 TND">
+                                    <input type="number" [(ngModel)]="productDetails.prix" class="form-control money-dollar" placeholder="Ex: 99,99 TND" required #f="ngModel" min="0">
                                 </div>
                             </div>
+                            <div class="alert alert-danger" *ngIf="f.invalid">Type obligatoire !</div>
+
                         </div>
 
                     </div>
                 </div>
-                <button class="btn btn-success waves-effect" (click)="addProduit()">SUCCESS</button>
+                <input type="submit" class="btn btn-success waves-effect" (click)="addProduit()"/>
             </div>
         </div>
     </div>
