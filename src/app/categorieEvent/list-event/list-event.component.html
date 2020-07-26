@@ -22,14 +22,18 @@
                                     <th>ID</th>
                                     <th>Nom</th>
                                     <th>type</th>
-                                    <th>adresse</th>
+                                    <th>Adresse</th>
                                     <th>Description</th>
-                                    <th>langitude</th>
-                                    <th>dateDebut</th>
-                                    <th>dateFin</th>
-                                    <th>nbrParticipent</th>
-                                    <th>placeDispo</th>
-                                    <th>categorie</th>
+                                   
+                                    <th>DateDebut</th>
+                                    <th>DateFin</th>
+                                    <th>NbrParticipent</th>
+                                    <th>PlaceDispo</th>
+                                    <th>Categorie</th>
+                                    <th>Latitude</th>
+                                    <th>Langitude</th>
+
+
 
                                     
                                 </tr>
@@ -47,6 +51,11 @@
                                     <td>{{p.nbr_participent}}</td>
                                     <td>{{p.place_dispo}}</td>
                                     <td>{{p.categorie?.nom}}</td>
+                                    <td>{{p.latitude}}</td>
+                                    <td>{{p.langitude}}</td>
+
+
+
 
                                     <td><button class="btn btn-danger waves-effect" (click)="deleteEvent(p.id)">DELETE</button></td>
                                     <td><button class="btn btn-primary waves-effect" routerLink="/editEvent/{{p.id}}">UPDATE</button></td>

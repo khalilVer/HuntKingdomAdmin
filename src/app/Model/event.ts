@@ -5,8 +5,8 @@ export class Event {
     type : string;
     adresse : string;
     description : String;
-    latitude : string;
-    langitude : string;
+    latitude : number;
+    langitude : number;
     dateDebut : Date ;
     dateFin : Date;
     nbrParticipent: number;

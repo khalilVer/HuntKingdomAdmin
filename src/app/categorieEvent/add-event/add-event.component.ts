@@ -12,7 +12,7 @@ import * as moment from 'moment';
 })
 export class AddEventComponent implements OnInit {
 
-  eventDetails = { nom: '', adresse: '',date_debut:'',date_fin:'',nbr_participent:''}
+  eventDetails = { nom: '', adresse: '',date_debut:'',date_fin:'',nbr_participent:'',langitude:'',latitude:''}
 
   categoriesList = [];
 
