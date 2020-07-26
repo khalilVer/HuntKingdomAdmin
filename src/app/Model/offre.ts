@@ -6,7 +6,7 @@ export class Offre {
   description: string;
   etat: string;
   deadline: Date ;
-  datePublication: Date;
+  datepublication: Date;
   isValidated: string;
 
 }

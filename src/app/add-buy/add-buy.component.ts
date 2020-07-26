@@ -10,7 +10,7 @@ import {BuyService} from '../service/buy.service';
 export class AddBuyComponent implements OnInit {
 
   constructor(private buyService: BuyService, public router: Router) { }
-  details = { titre: '', adresse: '', datePublication: '',  categorie: '', description: '' , deadline: '' , etat: ''}
+  details = { titre: '', adresse: '', datepublication: '',  categorie: '', description: '' , deadline: '' , etat: ''}
 
   ngOnInit() {
   }

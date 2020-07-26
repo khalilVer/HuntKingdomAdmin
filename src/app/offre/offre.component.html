@@ -20,7 +20,7 @@
                   <th>Description</th>
                   <th>Etat</th>
                   <th>Deadline</th>
-                  <th>DatePublication</th>
+                  <th>Date publication</th>
                   <th>Catégorie</th>
                   <th>Modifier</th>
                   <th>DELETE</th>
@@ -34,7 +34,7 @@
                   <td>{{p.description}}</td>
                   <td>{{p.etat}}</td>
                   <td>{{p.deadline}}</td>
-                  <td>{{p.datePublication}}</td>
+                  <td>{{p.datepublication}}</td>
                   <td>{{p.categorie}}</td>
                   <td><button class="btn btn-primary waves-effect" routerLink="/editOffre/{{p.id}}">Modifier</button></td>
                   <td><button class="btn btn-danger waves-effect" (click)="deleteOffre(p.id)">DELETE</button></td>

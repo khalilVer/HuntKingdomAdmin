@@ -4,7 +4,7 @@ export class Buy {
   adresse: string;
   description: string;
   etat: string;
-  deadline: Date ;
-  datePublication: Date;
+  deadline: string ;
+  datepublication: string;
   categorie: string;
 }
