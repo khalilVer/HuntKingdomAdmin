@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {OffreService} from '../service/offre.service';
-import {Offre} from '../Model/offre';
+import {Buy} from '../Model/buy';
+import {BuyService} from '../service/buy.service';
 
 
 @Component({
@@ -11,24 +12,23 @@ import {Offre} from '../Model/offre';
 export class OffreComponent implements OnInit {
   Offres: any = [];
 
-  constructor(private offreService: OffreService) { }
+  constructor(private offreService: BuyService) { }
 
   ngOnInit() {
     this.loadOffres();
   }
 // Get products lists
   loadOffres() {
-    return this.offreService.getOffres().subscribe((data: {}) => {
+    return this.offreService.getProducts().subscribe((data: {}) => {
       this.Offres = data;
     });
   }
 
   deleteOffre(id) {
     if (window.confirm('Are you sure, you want to delete?')) {
-      this.offreService.deleteOffre(id).subscribe(data => {
+      this.offreService.deleteProduct(id).subscribe(data => {
         this.loadOffres();
       });
     }
   }
-
 }
