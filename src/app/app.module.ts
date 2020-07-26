@@ -52,6 +52,8 @@ const ROUTES: Routes = [
     {path: 'offre', component: OffreComponent},
     {path: 'demande', component: DemandeComponent},
 
+    {path: 'editCategorie/:id', component: EditCategorieComponent}
+
 
 ];
 

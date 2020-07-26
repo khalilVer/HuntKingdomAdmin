@@ -2,6 +2,8 @@ import { CategorieService } from './../../service/categorie.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { EventService } from './../../service/event.service';
 import { Component, OnInit } from '@angular/core';
+import * as moment from 'moment';
+
 
 
 @Component({
@@ -33,6 +35,10 @@ ngOnInit() {
   updateEvent() {
     
       if (window.confirm('Are you sure, you want to update?')) {
+
+        this.eventData.date_debut = moment(this.eventData.date_debut).format('Y-MM-DD hh:mm:ss');
+        this.eventData.date_fin = moment(this.eventData.date_fin).format('Y-MM-DD hh:mm:ss');
+        
           this.eventService.updateEvent(this.id, this.eventData).subscribe(data => {
               this.router.navigate(['/allEvent']);
           });
