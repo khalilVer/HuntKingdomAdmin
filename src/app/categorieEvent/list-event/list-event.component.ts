@@ -1,6 +1,5 @@
 import { EventService } from './../../service/event.service';
 import { Component, OnInit } from '@angular/core';
-import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -13,7 +12,7 @@ export class ListEventComponent implements OnInit {
   events : any = [];
   originalEvents: any = [];
   search: string;
-  constructor(private eventService: EventService,private toastr: ToastrService) { }
+  constructor(private eventService: EventService) { }
 ngOnInit() {
     this.loadEvents();
 }
@@ -46,7 +45,6 @@ ngOnInit() {
      if (window.confirm('Are you sure, you want to delete?')) {
           this.eventService.deleteEvent(id).subscribe(data => {
               this.loadEvents();
-      this.toastr.success('The Event is successfully Deleted');
 
           });
       }

@@ -1,7 +1,6 @@
 import { CategorieService } from './../../service/categorie.service';
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
-import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -13,14 +12,13 @@ export class AddCategorieComponent implements OnInit {
 
   categorietDetails = { nom: '', description: '' }
 
-  constructor(private categorieService: CategorieService, public router: Router,private toastr: ToastrService) { }
+  constructor(private categorieService: CategorieService, public router: Router) { }
 
 ngOnInit() {
 }
 
   addCategori() {
       this.categorieService.createCategorie(this.categorietDetails).subscribe((data: {}) => {
-      this.toastr.success('The Category is added successfully', 'Thank You!');
 
           this.router.navigate(['/allCategorie']);
       });

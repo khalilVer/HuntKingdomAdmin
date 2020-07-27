@@ -3,7 +3,6 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { EventService } from './../../service/event.service';
 import { Component, OnInit } from '@angular/core';
 import * as moment from 'moment';
-import { ToastrService } from 'ngx-toastr';
 
 
 
@@ -19,7 +18,7 @@ export class EditEventComponent implements OnInit {
   
   id = this.actRoute.snapshot.params['id'];
   eventData: any = {};
-constructor(private cagtegoryService: CategorieService,private eventService: EventService, public router: Router, public actRoute: ActivatedRoute,private toastr: ToastrService) { }
+constructor(private cagtegoryService: CategorieService,private eventService: EventService, public router: Router, public actRoute: ActivatedRoute) { }
 
 ngOnInit() {
     this.cagtegoryService.getCategories().subscribe(data => {
@@ -42,7 +41,6 @@ ngOnInit() {
         this.eventData.date_fin = moment(this.eventData.date_fin).format('Y-MM-DD hh:mm:ss');
         
           this.eventService.updateEvent(this.id, this.eventData).subscribe(data => {
-           this.toastr.success('The Event is  successfully modified', 'Thank You!');
             
               this.router.navigate(['/allEvent']);
           });
