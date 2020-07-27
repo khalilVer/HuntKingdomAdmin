@@ -31,6 +31,9 @@ import { OffreComponent } from './offre/offre.component';
 import { DemandeComponent } from './demande/demande.component';
 import {OffreService} from './service/offre.service';
 import {DemandeService} from './service/demande.service';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 
 import { EditCategorieComponent } from './categorieEvent/edit-categorie/edit-categorie.component';
@@ -99,7 +102,9 @@ const ROUTES: Routes = [
       RouterModule.forRoot(ROUTES),
       HttpClientModule,
       ReactiveFormsModule,
-      Ng2SearchPipeModule
+      Ng2SearchPipeModule,
+      BrowserAnimationsModule,
+      ToastrModule.forRoot()
   ],
   providers: [ProduitServiceService, CategorieService, EventService, OffreService, DemandeService, BuyService, SellService],
   bootstrap: [AppComponent]

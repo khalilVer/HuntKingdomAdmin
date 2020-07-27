@@ -74,6 +74,16 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="col-md-2">
+                                <b>Number of Participants</b>
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="material-icons">accessibility</i>                                    </span>
+                                    <div class="form-line">
+                                        <input type="number" [(ngModel)]="eventData.nbr_participent" class="form-control " placeholder="00">
+                                    </div>
+                                </div>
+                            </div>
 
                             <div class="col-md-3">
                                 <b>Type</b>
@@ -101,28 +111,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-3">
-                                <b>Number of Participants</b>
-                                <div class="input-group">
-                                    <span class="input-group-addon">
-                                        <i class="material-icons">accessibility</i>                                    </span>
-                                    <div class="form-line">
-                                        <input type="number" [(ngModel)]="eventData.nbr_participent" class="form-control " placeholder="00">
-                                    </div>
-                                </div>
-                            </div>
                             
-                            <div class="col-md-3">
-                                <b>Langitude</b>
-                                <div class="input-group">
-                                                <span class="input-group-addon">
-                                                    <i class="material-icons">accessibility</i>
-                                                </span>
-                                    <div class="form-line">
-                                        <input type="text" [(ngModel)]="eventDetails.latitude" class="form-control credit-card" >
-                                    </div>
-                                </div>
-                            </div>
+                            
+
                             <div class="col-md-3">
                                 <b>Latitude</b>
                                 <div class="input-group">
@@ -130,10 +121,22 @@
                                                     <i class="material-icons">accessibility</i>
                                                 </span>
                                     <div class="form-line">
-                                        <input type="text" [(ngModel)]="eventDetails.langitude" class="form-control credit-card" >
+                                        <input type="text" [(ngModel)]="eventData.latitude" class="form-control credit-card" >
                                     </div>
                                 </div>
                             </div>
+                            <div class="col-md-3">
+                                <b>Langitude</b>
+                                <div class="input-group">
+                                                <span class="input-group-addon">
+                                                    <i class="material-icons">accessibility</i>
+                                                </span>
+                                    <div class="form-line">
+                                        <input type="text" [(ngModel)]="eventData.langitude" class="form-control credit-card" >
+                                    </div>
+                                </div>
+                            </div>
+                            
     
                         </div>
                     </div>

@@ -1,6 +1,7 @@
 import { Categorie } from './../../Model/categorie';
 import { CategorieService } from './../../service/categorie.service';
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-list-categorie',
@@ -10,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
 export class ListCategorieComponent implements OnInit {
 
   categories : any = [];
-   constructor(private categorieService: CategorieService) { }
+   constructor(private categorieService: CategorieService,private toastr: ToastrService) { }
   ngOnInit() {
       this.loadCategorie ();
   }
@@ -25,6 +26,8 @@ export class ListCategorieComponent implements OnInit {
        if (window.confirm('Are you sure, you want to delete?')) {
             this.categorieService.deleteCategorie(id).subscribe(data => {
                 this.loadCategorie();
+      this.toastr.success('The Category is successfully Deleted');
+
             });
         }
     }
